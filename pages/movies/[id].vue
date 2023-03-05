@@ -22,10 +22,9 @@ import { Movie } from '~/types/Movie';
 const route = useRoute();
 const movieId = computed(() => route.params.id);
 
-const imgUrl = computed(() => getPosterPath(data.value?.poster_path));
-
 const { data } = await useFetch<Movie>(`/api/movies/${movieId.value}`);
 
-const releaseDate = data.value?.release_date ? useDateFormat(new Date(data.value?.release_date ?? ''), 'YYYY-MM-DD').value : 'Unknown date';
+const imgUrl = usePosterPath(data.value?.poster_path);
 
+const releaseDate = data.value?.release_date ? useDateFormat(new Date(data.value?.release_date ?? ''), 'YYYY-MM-DD').value : 'Unknown date';
 </script>
