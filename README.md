@@ -1,6 +1,21 @@
-# Nuxt 3 Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# Nuxt 3 Sample Project - Movies App
+
+This sample Nuxt Movies App includes a lot of best practices and minimal server architecture to provide a starting point when creating Nuxt applications.
+
+## What you can expect in this repo:
+* Simple and organized folder structure
+* Typescript
+* Layouts example
+* File-based routing
+* Dynamic routing
+* Server
+* Config + env
+* Composables + VueUse
+* Testing example + Playwright
+* WindiCSS styling
+* Best practices
+* and more...
 
 ## Setup
 
@@ -39,4 +54,3 @@ Locally preview production build:
 npm run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
