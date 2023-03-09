@@ -16,6 +16,7 @@
 import { PropType } from 'vue';
 import { Movie } from '~/types/Movie';
 
+// Define props using TypeScript types
 const props = defineProps({
     movie: {
         type: Object as PropType<Movie>,
@@ -23,7 +24,5 @@ const props = defineProps({
     }
 })
 
-const config = useRuntimeConfig();
-const imgURL = computed(() => props.movie.poster_path != null ? `${config.public.imgBaseUrl}/${props.movie.poster_path}` : 'https://via.placeholder.com/300x500');
-
+const imgURL = usePosterPath(props.movie.poster_path);
 </script>
