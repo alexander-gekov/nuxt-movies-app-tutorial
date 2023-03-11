@@ -20,8 +20,8 @@
 <script setup lang="ts">
 import { ApiResponse } from '~~/types/ApiResponse';
 
+// refs will dynamically update the value when the input changes
 const searchTerm = ref('');
-
 const page = ref(1);
 
 // Disable pagination depending on first or last page
@@ -32,7 +32,7 @@ const disabledNext = computed(() => {
     return page.value + 1 === data.value?.total_pages;
 })
 
-// Create a debounced version of searchTerm
+// Create a debounced version of searchTerm so the server is not overloaded
 const debouncedSearchTerm = refDebounced(searchTerm, 700);
 
 // replace the url with the debounced version
@@ -40,6 +40,6 @@ const url = computed(() => {
     return `api/movies/search?query=${debouncedSearchTerm.value}&page=${page.value}`;
 });
 
+// useFetch will automatically update the data variable when the url changes
 const { data } = await useFetch<ApiResponse>(url)
-
 </script>
