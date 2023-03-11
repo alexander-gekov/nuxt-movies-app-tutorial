@@ -6,7 +6,7 @@
         <div class="flex justify-center items-center h-32">
             <input v-model="searchTerm" placeholder="Search" type="text" class="px-2 py-1 border border-gray-800 rounded-md min-w-64">
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 self-center gap-x-10 gap-y-10 mb-10">
+        <div class="movie-gallary-view grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 self-center gap-x-10 gap-y-10 mb-10">
             <MovieCard :movie="movie" v-for="movie in data?.results" :key="movie.id"/>
         </div>
         <div v-if="data?.results.length" class="flex justify-center">
