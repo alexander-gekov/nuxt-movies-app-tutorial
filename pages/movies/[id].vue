@@ -24,7 +24,7 @@ const movieId = computed(() => route.params.id);
 
 const { data } = await useFetch<Movie>(`/api/movies/${movieId.value}`);
 
-const imgUrl = usePosterPath(data.value?.poster_path);
+const imgUrl = usePosterPath(() => data.value?.poster_path);
 
 const releaseDate = data.value?.release_date ? useDateFormat(new Date(data.value?.release_date ?? ''), 'YYYY-MM-DD').value : 'Unknown date';
 </script>

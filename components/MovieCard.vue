@@ -24,5 +24,5 @@ const props = defineProps({
     }
 })
 
-const imgURL = usePosterPath(props.movie.poster_path);
+const imgURL = usePosterPath(() => props.movie.poster_path);
 </script>

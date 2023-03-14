@@ -1,6 +1,9 @@
-export function usePosterPath(posterPath: string | undefined) {
+import type { Ref } from "vue";
+
+export function usePosterPath(getPosterPathFn: () => string | undefined): Ref<string> {
     const config = useRuntimeConfig();
     return computed(() => {
+        const posterPath = getPosterPathFn();
         if (posterPath !== undefined) {
             if (posterPath.startsWith('http')) {
                 return posterPath;
