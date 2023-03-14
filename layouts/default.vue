@@ -3,6 +3,6 @@
         <NuxtLink class="px-4 py-2 border rounded-lg " to="/">Home</NuxtLink>
     </nav>
     <main>
-        <slot />
+        <slot></slot>
     </main>
 </template>
